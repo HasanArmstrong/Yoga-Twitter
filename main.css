@@ -27,6 +27,7 @@ body {
 /* ↓↓↓↓↓↓↓↓↓↓ LEFT-SIDEBAR ↓↓↓↓↓↓↓↓↓↓ */
 .left-sidebar {
   height: 500px;
+  width: 220px;
 }
 
 .profile-card {
@@ -45,6 +46,8 @@ body {
 /* ↓↓↓↓↓↓↓↓↓↓ RIGHT-SIDEBAR ↓↓↓↓↓↓↓↓↓↓ */
 .right-sidebar {
   height: 500px;
+  width: 220px;
+
 }
 
 .follow-module {
@@ -63,7 +66,35 @@ body {
 /* ↓↓↓↓↓↓↓↓↓↓ MAIN-SECTION ↓↓↓↓↓↓↓↓↓↓ */
 .main-section {
   height: 1000px;
+  width: 500px;
 }
+
+#tweet-box {
+  background-color: #F3E2E8;
+}
+
+#tweet-input-wrapping {
+  background-color: #FFFFFF;
+  border: 1px #803953 solid;
+  line-break: after;
+  margin-left: 70px;
+}
+
+#input-avatar {
+  position: absolute;
+  top: 10px;
+
+}
+
+#tweet-input::placeholder {
+  color: #803953;
+  font-size: 14px;
+}
+
+/* #tweet-input {
+  margin: auto 0;
+} */
+
 /* ↑↑↑↑↑↑↑↑↑↑ MAIN-SECTION ↑↑↑↑↑↑↑↑↑↑ */
 
 
