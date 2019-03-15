@@ -199,7 +199,7 @@ height:50%
 }
 
 #custom-ul-trending{
-
+  padding-left:0;
   padding-top:10px;
 }
 
@@ -270,4 +270,7 @@ span#twitter-handle{
 #custom-footer{
 color:#657786 !important;
 font-size:8px;
+}
+#trending-content{
+  text-align:left;
 }
