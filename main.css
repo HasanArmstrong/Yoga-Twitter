@@ -1,5 +1,7 @@
 /* main-color: #803953
 
+   pinkish color: #F3E2E8
+
    background-color: #EEEEEE
 
    white-color: #FFFFFF
@@ -13,14 +15,16 @@
 }
 
 body {
-  font-family: "Segoe UI",Arial,sans-serif;
-
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  background-color: #E6ECF0;
 }
 
 /* ↓↓↓↓↓↓↓↓↓↓ NAV-BAR ↓↓↓↓↓↓↓↓↓↓ */
 .nav-bar {
-  height: 46px; 
+  height: 46px;
 }
+
 /* ↑↑↑↑↑↑↑↑↑↑ NAV-BAR ↑↑↑↑↑↑↑↑↑↑ */
 
 
@@ -36,9 +40,10 @@ body {
 }
 
 .trending-module {
-  border: 1px #803953 solid;  
+  border: 1px #803953 solid;
   height: 50%;
 }
+
 /* ↑↑↑↑↑↑↑↑↑↑ LEFT-SIDEBAR ↑↑↑↑↑↑↑↑↑↑ */
 
 
@@ -51,14 +56,15 @@ body {
 }
 
 .follow-module {
-  border: 1px #803953 solid;  
+  border: 1px #803953 solid;
   height: 50%;
 }
 
 .footer {
-  border: 1px #803953 solid;  
+  border: 1px #803953 solid;
   height: 50%;
 }
+
 /* ↑↑↑↑↑↑↑↑↑↑ RIGHT-SIDEBAR ↑↑↑↑↑↑↑↑↑↑ */
 
 
@@ -77,26 +83,83 @@ body {
   background-color: #FFFFFF;
   border: 1px #803953 solid;
   line-break: after;
-  margin-left: 70px;
+  margin-left: 5px;
 }
 
-#input-avatar {
+/* #input-avatar {
   position: absolute;
   top: 10px;
 
-}
+} */
 
 #tweet-input::placeholder {
   color: #803953;
   font-size: 14px;
 }
 
+#tweet-input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  height: 26px;
+  overflow-wrap: break-word;
+  resize: none;
+  /* overflow: hidden; */
+}
+
+#tweet-button {
+  background-color: #9e4767;
+  border: 1px solid #803953;
+  color: #fff;
+  border-radius: 100px;
+  box-shadow: none;
+  cursor: not-allowed;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: auto;
+}
+
+#tweet-button:hover {
+  background-color: #803953;
+}
+
+#tweet-content {
+  padding-left: 15px;
+}
+
+.row-list {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+#action-row>li>a {
+  color: inherit;
+}
+
+.tweet {
+  margin: 2px 0;
+  padding: 15px 0 0 15px;
+  background-color: #fff;
+}
+
+.tweet:hover {
+  background-color: #F5F8FA;
+  /* cursor: pointer; */
+}
+
+.tweet-text {
+  overflow-wrap: break-word;
+}
+/* #button-row {
+  padding-top: 50px;
+} */
 /* #tweet-input {
   margin: auto 0;
 } */
 
 /* ↑↑↑↑↑↑↑↑↑↑ MAIN-SECTION ↑↑↑↑↑↑↑↑↑↑ */
-
-
-
-

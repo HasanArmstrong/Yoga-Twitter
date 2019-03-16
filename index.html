@@ -48,17 +48,44 @@
       <!-- main section : Hung -->
       <div class="main-section">
 
-        <div id="tweet-box" class="justify-content-center py-2">
+        <div tabindex="0" id="tweet-box" class="justify-content-center py-2">
           <div class="d-flex flex-wrap">
-            <div id="input-avatar" class="align-middle my-auto pl-4 pr-2">
+            <div id="input-avatar" class="my-auto pl-4 pr-2">
               <img src="images/avatar.png" alt="" class="rounded-circle">
             </div>
             <div id="tweet-input-wrapping" class="align-middle my-auto mr-3 flex-grow-1 d-flex px-2 py-1 rounded">
-              <input id="tweet-input" onclick="expandInput()" type="text" placeholder="What's happening?" class="flex-grow-1 flex-grow-1 border-0">
+              <textarea id="tweet-input" type="text" placeholder="What's happening?" class="flex-grow-1 border-0 align-top"></textarea>
             </div>
           </div>
-          <div id="button-row" style="display: none">Hello world</div>
+          <div id="button-row" class="d-none text-right py-2">
+            <span id="letters-remaining">140 letters remaining</span>
+            <a id="tweet-button" class="mr-3">Tweet</a>
+          </div>
+        </div>
 
+        <div id="tweet-section">
+          <!-- <div class="tweet d-flex justify-content-start align-top">
+            <img src="images/bigavatar.png" alt="" class="rounded-circle" width="48px" height="48px">
+            <ul id="tweet-content" class="row-list">
+              <li class="text-left">
+                <ul id="user-infor" class="d-flex row-list">
+                  <li><strong>Rachael Daily </strong></li>
+                  <li class="pl-1 text-secondary">@RachaelDaily</li>
+                  <li class="pl-1 text-secondary">· 34m</li>
+                </ul>
+              </li>
+              <li class="tweet-text text-left pb-3">Hello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeee</li>
+              <li class="text-left">
+                <ul id="action-row" class="d-flex row-list">
+                  <li><a href="#"><i class="far fa-comment"></i></a></li>
+                  <li class="pl-5"><a href="#"><i class="fas fa-retweet"></i></a></li>
+                  <li class="pl-5"><a href="#"><i class="far fa-heart"></i></a></li>
+                  <li class="pl-5"><a href="#"><i class="fas fa-align-right"></i></a></li>
+                </ul>
+              </li>
+            </ul>
+          </div> -->
+          
         </div>
 
       </div>
