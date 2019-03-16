@@ -8,64 +8,222 @@
 */
 
 .container {
-  border: 1px #803953 solid;
-  height: inherit;
+    /* border: 1px #803953 solid; */
+    height: inherit;
 }
 
 body {
-  font-family: "Segoe UI",Arial,sans-serif;
-
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin-top: 70px;
+    /* margin-bottom: 270px; */
 }
+
 
 /* ↓↓↓↓↓↓↓↓↓↓ NAV-BAR ↓↓↓↓↓↓↓↓↓↓ */
-.nav-bar {
-  height: 46px; 
+
+#content-left {
+    font-size: 14px;
+    font-weight: bold;
+    color: lightgray
 }
+
+#content-left:hover {
+    font-size: 14px;
+    font-weight: bold;
+    color: #9e4767;
+}
+
+@media only screen and (max-width: 1026px) {
+    #content-left {
+        display: none;
+    }
+}
+
+#left-icon {
+    font-size: 14px;
+    font-weight: bold;
+    color: lightgray;
+}
+
+#left-icon:hover {
+    font-size: 14px;
+    font-weight: bold;
+    color: #9e4767;
+}
+
+@media only screen and (max-width: 1026px) {
+    #left-icon {
+        margin: 10px;
+    }
+}
+
+
+/* ul {
+    display: inline-block;
+}
+
+ul li i {
+    display: inline-block;
+    vertical-align: middle;
+} */
+
+#brand-logo {
+    position: absolute;
+    left: 45%;
+}
+
+#search-frame {
+    /* border: 1px solid #803953; */
+    border-radius: 100px;
+    width: 150px;
+    height: 30px;
+    font-size: 12px;
+    /* position: absolute; */
+    right: 20%;
+}
+
+#search-frame:focus {
+    border: 1px solid #803953;
+    width: 200px;
+}
+
+@media only screen and (max-width: 1026px) {
+    #search-frame {
+        display: none;
+    }
+}
+
+.search .fa-search {
+    position: relative;
+    right: 26%;
+    /* font-size: 15px; */
+}
+
+@media only screen and (max-width: 1026px) {
+    #fa-search-icon {
+        display: none;
+    }
+}
+
+.form-control {
+    border: 0;
+}
+
+
+/* .context {
+    width: 500px;
+    height: 35px;
+    font-size: 10pt;
+} */
+
+#tweet-button {
+    background-color: #9e4767;
+    border: 1px solid #803953;
+    color: #fff;
+    border-radius: 100px;
+    box-shadow: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    /* line-height: 20px; */
+    padding: 4px 15px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#tweet-button:hover {
+    background-color: #803953;
+}
+
+@media only screen and (max-width: 1026px) {
+    #tweet-button {
+        display: none;
+    }
+}
+
+#signin-btn {
+    background-color: none;
+    border: 1px solid #803953;
+    color: #9e4767;
+    border-radius: 100px;
+    box-shadow: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    padding: 4px 15px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#signin-btn:hover {
+    background-color: #9e4767;
+    border: 1px solid #803953;
+    color: #fff;
+}
+
+@media only screen and (max-width: 1026px) {
+    #signin-btn {
+        border: none;
+    }
+}
+
+
+/* .nav-bar {
+    min-height: 30px !important;
+} */
+
+
 /* ↑↑↑↑↑↑↑↑↑↑ NAV-BAR ↑↑↑↑↑↑↑↑↑↑ */
 
 
 /* ↓↓↓↓↓↓↓↓↓↓ LEFT-SIDEBAR ↓↓↓↓↓↓↓↓↓↓ */
+
 .left-sidebar {
-  height: 500px;
+    height: 500px;
 }
 
 .profile-card {
-  border: 1px #803953 solid;
-  height: 50%;
+    border: 1px #803953 solid;
+    height: 50%;
 }
 
 .trending-module {
-  border: 1px #803953 solid;  
-  height: 50%;
+    border: 1px #803953 solid;
+    height: 50%;
 }
+
+
 /* ↑↑↑↑↑↑↑↑↑↑ LEFT-SIDEBAR ↑↑↑↑↑↑↑↑↑↑ */
 
 
-
 /* ↓↓↓↓↓↓↓↓↓↓ RIGHT-SIDEBAR ↓↓↓↓↓↓↓↓↓↓ */
+
 .right-sidebar {
-  height: 500px;
+    height: 500px;
 }
 
 .follow-module {
-  border: 1px #803953 solid;  
-  height: 50%;
+    border: 1px #803953 solid;
+    height: 50%;
 }
 
 .footer {
-  border: 1px #803953 solid;  
-  height: 50%;
+    border: 1px #803953 solid;
+    height: 50%;
 }
+
+
 /* ↑↑↑↑↑↑↑↑↑↑ RIGHT-SIDEBAR ↑↑↑↑↑↑↑↑↑↑ */
 
 
-
 /* ↓↓↓↓↓↓↓↓↓↓ MAIN-SECTION ↓↓↓↓↓↓↓↓↓↓ */
+
 .main-section {
-  height: 1000px;
+    height: 1000px;
 }
+
+
 /* ↑↑↑↑↑↑↑↑↑↑ MAIN-SECTION ↑↑↑↑↑↑↑↑↑↑ */
-
-
-
-
