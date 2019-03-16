@@ -2,77 +2,121 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Yoga Tweeter</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- font awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-  <!-- stylesheet css -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-    crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Yoga Tweeter</title>
+    <meta name="viewport" content="width=device-width,shrink-to-fit">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <!-- stylesheet css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
 </head>
 
 <body>
 
 
-  <!-- Navbar : Ngan -->
-  <div class="nav-bar text-center">
-    <div class="container">
-      <h1>Nav bar</h1>
+    <!-- Navbar : Ngan -->
+    <div class="nav-bar text-center fixed-top  ">
+        <nav class=" navbar-light bg-light text-secondary">
+            <div class="container container-fluid">
+
+                <div class="navbar-collapse d-flex flex-row" id="navbarSupportedContent">
+                    <div class="ml-sm-3">
+                        <ul class="navbar-nav mr-auto d-flex d-inline flex-row">
+                            <li class="nav-item  active content ">
+                                <span class="nav-link mr-sm-4" href="#"><i id="left-icon" class="fas fa-home "></i><a id="content-left">  Home</a></span>
+                            </li>
+                            <li class="nav-item content">
+                                <span class="nav-link mr-sm-4" href="#"><i id="left-icon" class="fas fa-bell "></i><a id="content-left">  Notifications</a></span>
+                            </li>
+                            <li class="nav-item content">
+                                <span class="nav-link " href="#"><i id="left-icon" class="far fa-envelope"></i><a id="content-left" > Messages</a></span>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- <div class="align-middle mx-auto d-flex flex-row justify-content-center  "> -->
+                    <a id="brand-logo" class="navbar-brand ml-sm-5 " href="#">
+                        <img src="images/namaste-text-edit.png" alt="yoga-logo">
+                    </a>
+
+                    <!-- </div> -->
+                    <div class="ml-auto">
+                        <ul class="navbar-nav d-flex flex-row justify-content-center">
+                            <div>
+                                <form class="search form-inline ">
+                                    <input id="search-frame" class="form-control context mr-sm-4" type="text" placeholder="  Search Yoga..." aria-label="Search">
+                                    <span id="fa-search-icon" class="fa fa-search "></span>
+                                </form>
+                            </div>
+                            <li class="nav-item active">
+                                <span id="signin-btn" class="nav-link mr-sm-2" href="#">Sign In</span>
+                            </li>
+                            <li class="nav-item">
+                                <span id="tweet-button" class="nav-link mr-sm-4" href="#">Tweet</span>
+                            </li>
+
+                            <!-- <li class="nav-item">
+            <a class="nav-link disabled" href="#">Messages</a>
+        </li> -->
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
     </div>
-  </div>
-  <!-- Navbar : Ngan -->
+    <!-- Navbar : Ngan -->
 
 
-  <div class="site-body container text-center">
+    <div class="site-body container text-center">
 
-    <div class="row">
+        <div class="row">
 
-      <!-- left sidebar : Hasan -->
-      <div class="left-sidebar col-6 col-md-3">
-        <div class="container">
-          <div class="profile-card">
-            <h1>Profile card</h1>
-          </div>
+            <!-- left sidebar : Hasan -->
+            <div class="left-sidebar col-6 col-md-3">
+                <div class="container">
+                    <div class="profile-card">
+                        <h1>Profile card</h1>
+                    </div>
 
-          <div class="trending-module">
-            <h1>Trending module</h1>
-          </div>
+                    <div class="trending-module">
+                        <h1>Trending module</h1>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar : Hasan -->
+
+
+            <!-- main section : Hung -->
+            <div class="main-section col-6 col-md-6">
+                <div class="container">
+                    <h1>Main section</h1>
+                </div>
+            </div>
+            <!-- main section : Hung -->
+
+
+            <!-- right sidebar : Hasan -->
+            <div class="right-sidebar col-6 col-md-3">
+                <div class="container">
+                    <div class="follow-module">
+                        <h1>Follow module</h1>
+                    </div>
+
+                    <div class="footer">
+                        <h1>Footer</h1>
+                    </div>
+                </div>
+            </div>
+            <!-- right sidebar : Hasan -->
+
+
         </div>
-      </div>
-      <!-- left sidebar : Hasan -->
-
-
-      <!-- main section : Hung -->
-      <div class="main-section col-6 col-md-6">
-        <div class="container">
-          <h1>Main section</h1>
-        </div>
-      </div>
-      <!-- main section : Hung -->
-
-
-      <!-- right sidebar : Hasan -->
-      <div class="right-sidebar col-6 col-md-3">
-        <div class="container">
-          <div class="follow-module">
-            <h1>Follow module</h1>
-          </div>
-
-          <div class="footer">
-            <h1>Footer</h1>
-          </div>
-        </div>
-      </div>
-      <!-- right sidebar : Hasan -->
-
 
     </div>
-
-  </div>
-  <script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
