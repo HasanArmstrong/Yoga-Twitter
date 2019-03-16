@@ -50,18 +50,31 @@ let render = () => {
     <li class="text-left pb-3"><div class="tweet-text">${x.tweetText}</div></li>
     <li class="text-left">
       <ul id="action-row" class="d-flex row-list">
-        <li><a href="#"><i title="Comment" class="far fa-comment"></i></a></li>
-        <li class="pl-5"><a href="#"><i id="retweet${x.id}" title="Retweet" class="fas fa-retweet"></i></a></li>
-        <li class="pl-5"><a href="#"><i id="like${x.id}" title="Like" class="far fa-heart"></i></a></li>
-        <li class="pl-5"><a href="#"><i title="Statitic" class="fas fa-align-right"></i></a></li>
+        <li><a><i title="Comment" class="far fa-comment"></i></a></li>
+        <li class="pl-5"><a><i id="retweet${x.id}" title="Retweet" class="fas fa-retweet"></i></a></li>
+        <li class="pl-5">
+          <a>
+            <i id="like${x.id}" title="Like" class="${x.liked?'fas fa-heart text-danger':'far fa-heart'}">
+            </i>
+          </a>
+        </li>
+        <li class="pl-5"><a><i title="Statitic" class="fas fa-align-right"></i></a></li>
       </ul>
     </li>
   </ul>
 </div>
-  `).join('');
+  `).join(''); 
 
   //render letters remaining
   renderLettersRemaining();
+  
+  console.log(tweets);
+
+  //retweet 
+  retweet();
+
+  //like
+  like();
 }
 
 
@@ -96,7 +109,7 @@ let renderLettersRemaining = () => {
 }
 
 //Count letters remaining of tweet input area
-inputArea.addEventListener('input', render);
+inputArea.addEventListener('input', renderLettersRemaining);
 
 //Get text from tweet input box
 let getTweet = () => {
@@ -107,7 +120,8 @@ let getTweet = () => {
   //add text value to tweets array
   tweets.unshift({
     tweetText: inputValue,
-    id: tweets.length
+    id: tweets.length,
+    liked: false
   });
 
   //erase input area
@@ -117,22 +131,49 @@ let getTweet = () => {
   remaining = 0;
 
   render();
+}
 
-  //retweet button
-  for (let i = 0; i < tweets.length - 1; i++) {
-    let retweet = () => {
-      tweets.unshift(tweets[i]);
+//retweet function
+let retweet = () => {
+  for (let i = tweets.length-1; i >= 0 ; i--) {
+
+    let action = () => {
+      console.log(`retweeted ${tweets[i].id}`);
+
+      tweets.unshift({
+        tweetText: tweets[i].tweetText,
+        id: tweets.length,
+        liked: false
+      });
+      render();
+    };
+
+    document.querySelector(`#retweet${tweets[i].id}`).addEventListener('click', action);
+  }
+}
+
+//like function
+let like = () => {
+  for (let i = tweets.length-1; i >= 0 ; i--) {
+
+    let action = () => {
+      console.log(`liked ${tweets[i].id}`);
+
+      tweets[i].liked = !tweets[i].liked;
 
       render();
-    }
+    };
 
-    document.querySelector(`#retweet${i}`).addEventListener('click', retweet);
+    document.querySelector(`#like${tweets[i].id}`).addEventListener('click', action);
   }
 }
 
 
-//render before addEventListener
-render();
+
+
+
+
+
 
 
 /* ↑↑↑↑↑↑↑↑↑↑ MAIN-SECTION ↑↑↑↑↑↑↑↑↑↑ */

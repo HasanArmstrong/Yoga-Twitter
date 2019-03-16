@@ -137,8 +137,9 @@ body {
   padding-left: 0px;
 }
 
-#action-row>li>a {
+#action-row>li>a>i {
   color: inherit;
+  cursor: pointer;
 }
 
 .tweet {
