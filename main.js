@@ -54,11 +54,11 @@ let render = () => {
       </ul>
     </li>
     <li class="text-left pb-3"><div class="tweet-text">${x.tweetText}</div></li>
-    <li>
+    ${x.imgUrl?`<li>
       <div class="mr-3 mb-3">
         <img src="${x.imgUrl}" alt="" class="img-fluid img-rounded">
       </div>
-    </li>
+    </li>`:''}
     <li class="text-left">
       <ul id="action-row" class="d-flex list-unstyled">
         <li><a><i title="Comment" class="far fa-comment"></i></a></li>
@@ -137,7 +137,7 @@ let getTweet = () => {
     }
 
     //(img url) delete image url
-    else if (x.includes('.jpg' || '.png')) {
+    else if (x.includes('.jpg') || x.includes('.png')) {
       return '';
     } else {
       return x;
@@ -146,7 +146,7 @@ let getTweet = () => {
   }).join(' ');
 
   //(img url) filter inputValue to get the img url alone
-  let imgUrl = inputValue.split(' ').filter(x => x.includes('.jpg' || '.png')).join('');
+  let imgUrl = inputValue.split(' ').filter(x => x.includes('.png') || x.includes('.jpg') ).join('');
 
   //add text value to tweets array
   tweets.unshift({
@@ -188,8 +188,8 @@ let retweet = () => {
         //remove liked
         liked: false,
 
-        //copy img url
-        imgUrl: ''
+        //keep img url
+        imgUrl: tweets[i].imgUrl
 
       });
       render();
