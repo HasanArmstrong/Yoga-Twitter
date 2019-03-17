@@ -1,4 +1,7 @@
 /* ↓↓↓↓↓↓↓↓↓↓ MAIN-SECTION ↓↓↓↓↓↓↓↓↓↓ */
+
+
+
 //Define text box area
 let inputArea = document.querySelector('#tweet-input');
 
@@ -19,19 +22,22 @@ let lettersRemaining = document.querySelector('#letters-remaining');
 
 let remaining = 0;
 
-//Hide tweet button
+//show tweet button
 tweetBox.addEventListener('focusin', () => {
   inputArea.style.height = '80px';
 
   document.querySelector('#button-row').classList.add('d-block');
 })
 
-//Show tweet button and expand text area
-tweetBox.addEventListener('focusout', () => {
+//hide tweet button row function
+let hideTweetButton = () => {
   inputArea.style.height = '26px';
 
   document.querySelector('#button-row').classList.remove('d-block');
-})
+}
+
+//hide tweet button
+tweetBox.addEventListener('focusout', hideTweetButton)
 
 //Render tweets to screen
 let render = () => {
@@ -39,17 +45,22 @@ let render = () => {
   tweetArea.innerHTML = tweets.map(x => `
   <div id=${x.id} class="tweet d-flex justify-content-start align-top">
   <div><img src="images/bigavatar.png" alt="" class="rounded-circle" width="48px" height="48px"></div>
-  <ul id="tweet-content" class="row-list">
+  <ul id="tweet-content" class="list-unstyled">
     <li class="text-left">
-      <ul id="user-infor" class="d-flex row-list">
+      <ul id="user-infor" class="d-flex list-unstyled">
         <li><strong>Rachael Daily </strong></li>
         <li class="pl-1 text-secondary">@RachaelDaily</li>
         <li class="pl-1 text-secondary">· 34m</li>
       </ul>
     </li>
     <li class="text-left pb-3"><div class="tweet-text">${x.tweetText}</div></li>
+    <li>
+      <div class="mr-3 mb-3">
+        <img src="${x.imgUrl}" alt="" class="img-fluid img-rounded">
+      </div>
+    </li>
     <li class="text-left">
-      <ul id="action-row" class="d-flex row-list">
+      <ul id="action-row" class="d-flex list-unstyled">
         <li><a><i title="Comment" class="far fa-comment"></i></a></li>
         <li class="pl-5"><a><i id="retweet${x.id}" title="Retweet" class="fas fa-retweet"></i></a></li>
         <li class="pl-5">
@@ -63,11 +74,11 @@ let render = () => {
     </li>
   </ul>
 </div>
-  `).join(''); 
+  `).join('');
 
   //render letters remaining
   renderLettersRemaining();
-  
+
   console.log(tweets);
 
   //retweet 
@@ -117,11 +128,34 @@ let getTweet = () => {
   //define input value
   let inputValue = inputArea.value;
 
+  //filter inputValue
+  let filteredInputValue = inputValue.split(' ').map(x => {
+
+    //(tag a friend) filter so every word start with @ will be blue
+    if (x.startsWith('@')) {
+      return `<a href="#" class="text-primary">${x}</a> `;
+    }
+
+    //(img url) delete image url
+    else if (x.includes('.jpg' || '.png')) {
+      return '';
+    } else {
+      return x;
+    }
+
+  }).join(' ');
+
+  //(img url) filter inputValue to get the img url alone
+  let imgUrl = inputValue.split(' ').filter(x => x.includes('.jpg' || '.png')).join('');
+
   //add text value to tweets array
   tweets.unshift({
-    tweetText: inputValue,
+
+    //use the filtered value
+    tweetText: filteredInputValue,
     id: tweets.length,
-    liked: false
+    liked: false,
+    imgUrl: imgUrl
   });
 
   //erase input area
@@ -130,20 +164,33 @@ let getTweet = () => {
   //reset letters remained to 140
   remaining = 0;
 
+  //hide tweet button
+  hideTweetButton();
+
   render();
 }
 
 //retweet function
 let retweet = () => {
-  for (let i = tweets.length-1; i >= 0 ; i--) {
+  for (let i = tweets.length - 1; i >= 0; i--) {
 
     let action = () => {
       console.log(`retweeted ${tweets[i].id}`);
 
+      //add a clone tweet to the top of the array
       tweets.unshift({
+        //keep the original text
         tweetText: tweets[i].tweetText,
+
+        //give it a new id
         id: tweets.length,
-        liked: false
+
+        //remove liked
+        liked: false,
+
+        //copy img url
+        imgUrl: ''
+
       });
       render();
     };
@@ -154,11 +201,12 @@ let retweet = () => {
 
 //like function
 let like = () => {
-  for (let i = tweets.length-1; i >= 0 ; i--) {
+  for (let i = tweets.length - 1; i >= 0; i--) {
 
     let action = () => {
       console.log(`liked ${tweets[i].id}`);
 
+      //change the liked value of tweet to the opposite
       tweets[i].liked = !tweets[i].liked;
 
       render();

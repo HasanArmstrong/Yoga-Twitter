@@ -58,34 +58,45 @@
             </div>
           </div>
           <div id="button-row" class="d-none text-right py-2">
-            <span id="letters-remaining">140 letters remaining</span>
+            <span id="letters-remaining" class="mr-2">140 letters remaining</span>
             <a id="tweet-button" class="mr-3">Tweet</a>
           </div>
         </div>
 
         <div id="tweet-section">
-          <!-- <div class="tweet d-flex justify-content-start align-top">
-            <img src="images/bigavatar.png" alt="" class="rounded-circle" width="48px" height="48px">
-            <ul id="tweet-content" class="row-list">
+          <!-- <div id=${x.id} class="tweet d-flex justify-content-start align-top">
+            <div><img src="images/bigavatar.png" alt="" class="rounded-circle" width="48px" height="48px"></div>
+            <ul id="tweet-content" class="list-unstyled">
               <li class="text-left">
-                <ul id="user-infor" class="d-flex row-list">
+                <ul id="user-infor" class="d-flex list-unstyled">
                   <li><strong>Rachael Daily </strong></li>
                   <li class="pl-1 text-secondary">@RachaelDaily</li>
                   <li class="pl-1 text-secondary">· 34m</li>
                 </ul>
               </li>
-              <li class="tweet-text text-left pb-3">Hello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeeeHello thereeeeeeeeeeeeeee</li>
+              <li class="text-left pb-3">
+                <div class="tweet-text">${x.tweetText}</div>
+              </li>
+              <li>
+                <div class="mr-3 mb-3">
+                  <img src="https://pbs.twimg.com/media/D1mGo5dXgAAftms.jpg" alt="" class="img-fluid img-rounded">
+                </div>
+              </li>
               <li class="text-left">
-                <ul id="action-row" class="d-flex row-list">
-                  <li><a href="#"><i class="far fa-comment"></i></a></li>
-                  <li class="pl-5"><a href="#"><i class="fas fa-retweet"></i></a></li>
-                  <li class="pl-5"><a href="#"><i class="far fa-heart"></i></a></li>
-                  <li class="pl-5"><a href="#"><i class="fas fa-align-right"></i></a></li>
+                <ul id="action-row" class="d-flex list-unstyled">
+                  <li><a><i title="Comment" class="far fa-comment"></i></a></li>
+                  <li class="pl-5"><a><i id="retweet${x.id}" title="Retweet" class="fas fa-retweet"></i></a></li>
+                  <li class="pl-5">
+                    <a>
+                      <i id="like${x.id}" title="Like" class="${x.liked?'fas fa-heart text-danger':'far fa-heart'}">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="pl-5"><a><i title="Statitic" class="fas fa-align-right"></i></a></li>
                 </ul>
               </li>
             </ul>
           </div> -->
-          
         </div>
 
       </div>
@@ -110,6 +121,8 @@
     </div>
 
   </div>
+  <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
   <script src="main.js"></script>
 </body>
 

@@ -16,7 +16,6 @@
 
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 14px;
   background-color: #E6ECF0;
 }
 
@@ -71,8 +70,8 @@ body {
 
 /* ↓↓↓↓↓↓↓↓↓↓ MAIN-SECTION ↓↓↓↓↓↓↓↓↓↓ */
 .main-section {
-  height: 1000px;
   width: 500px;
+  font-size: 14px;
 }
 
 #tweet-box {
@@ -86,15 +85,8 @@ body {
   margin-left: 5px;
 }
 
-/* #input-avatar {
-  position: absolute;
-  top: 10px;
-
-} */
-
 #tweet-input::placeholder {
   color: #803953;
-  font-size: 14px;
 }
 
 #tweet-input {
@@ -104,7 +96,6 @@ body {
   height: 26px;
   overflow-wrap: break-word;
   resize: none;
-  /* overflow: hidden; */
 }
 
 #tweet-button {
@@ -132,10 +123,10 @@ body {
   padding-left: 15px;
 }
 
-.row-list {
+/* .row-list {
   list-style-type: none;
   padding-left: 0px;
-}
+} */
 
 #action-row>li>a>i {
   color: inherit;
@@ -150,17 +141,18 @@ body {
 
 .tweet:hover {
   background-color: #F5F8FA;
-  /* cursor: pointer; */
 }
 
 .tweet-text {
   overflow-wrap: break-word;
 }
-/* #button-row {
-  padding-top: 50px;
-} */
-/* #tweet-input {
-  margin: auto 0;
-} */
 
+.img-rounded {
+  border-radius: 15px;
+  border: 1px solid lightgray;
+}
+
+.img-rounded:hover {
+  border: 1px solid gray;  
+}
 /* ↑↑↑↑↑↑↑↑↑↑ MAIN-SECTION ↑↑↑↑↑↑↑↑↑↑ */
