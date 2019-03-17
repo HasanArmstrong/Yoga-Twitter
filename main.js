@@ -14,6 +14,9 @@ let tweetBtn = document.querySelector('#tweet-button-1');
 //Tweets section
 let tweets = [];
 
+//Id list
+let idList = [];
+
 //Tweet text rendering section
 let tweetArea = document.querySelector('#tweet-section');
 
@@ -21,6 +24,12 @@ let tweetArea = document.querySelector('#tweet-section');
 let lettersRemaining = document.querySelector('#letters-remaining');
 
 let remaining = 0;
+
+//defind filter hastag
+let filteredHastag = {};
+
+//define trending tweet
+let trendingTweets = document.querySelector('#custom-ul-trending');
 
 //show tweet button
 tweetBox.addEventListener('focusin', () => {
@@ -43,37 +52,46 @@ tweetBox.addEventListener('focusout', hideTweetButton)
 let render = () => {
 
   tweetArea.innerHTML = tweets.map(x => `
-  <div id=${x.id} class="tweet d-flex justify-content-start align-top">
-  <div><img src="images/bigavatar.png" alt="" class="rounded-circle" width="48px" height="48px"></div>
-  <ul id="tweet-content" class="list-unstyled">
-    <li class="text-left">
-      <ul id="user-infor" class="d-flex list-unstyled">
-        <li><strong>Rachael Daily </strong></li>
-        <li class="pl-1 text-secondary">@RachaelDaily</li>
-        <li class="pl-1 text-secondary">· 34m</li>
-      </ul>
-    </li>
-    <li class="text-left pb-3"><div class="tweet-text">${x.tweetText}</div></li>
-    ${x.imgUrl?`<li>
-      <div class="mr-3 mb-3">
-        <img src="${x.imgUrl}" alt="" class="img-fluid img-rounded">
-      </div>
-    </li>`:''}
-    <li class="text-left">
-      <ul id="action-row" class="d-flex list-unstyled">
-        <li><a><i title="Comment" class="far fa-comment"></i></a></li>
-        <li class="pl-5"><a><i id="retweet${x.id}" title="Retweet" class="fas fa-retweet"></i></a></li>
-        <li class="pl-5">
-          <a>
-            <i id="like${x.id}" title="Like" class="${x.liked?'fas fa-heart text-danger':'far fa-heart'}">
-            </i>
-          </a>
+  <div class="tweet">
+    ${x.retweet >= 0 ? `<div class="ml-5">
+      <small class="fas fa-retweet"></small>
+      <small class="text-secondary"> You Retweeted</small>
+    </div>` : ''}
+    <div id=${x.id} class="d-flex justify-content-start align-top">
+      <div><img src="images/bigavatar.png" alt="" class="rounded-circle" width="48px" height="48px"></div>
+      <ul id="tweet-content" class="list-unstyled">
+        <li class="">
+          <ul id="user-infor" class="d-flex list-unstyled">
+            <li><strong>Rachael Daily </strong></li>
+            <li class="pl-1 text-secondary">@RachaelDaily</li>
+            <li class="pl-1 text-secondary">· 34m</li>
+          </ul>
         </li>
-        <li class="pl-5"><a><i title="Statitic" class="fas fa-align-right"></i></a></li>
+        <li class="text-left pb-3">
+          <div class="tweet-text">${x.tweetText}</div>
+        </li>
+        ${x.imgUrl?`<li>
+          <div class="mr-3 mb-3">
+            <img src="${x.imgUrl}" alt="" class="img-fluid img-rounded">
+          </div>
+        </li>`:''}
+        <li class="">
+          <ul id="action-row" class="d-flex list-unstyled">
+            <li><a><i title="Comment" class="far fa-comment"></i></a></li>
+            <li class="pl-5"><a><i id="retweet${x.id}" title="Retweet" class="fas fa-retweet"></i></a></li>
+            <li class="pl-5">
+              <a>
+                <i id="like${x.id}" title="Like" class="${x.liked?'fas fa-heart text-danger':'far fa-heart'}">
+                </i>
+              </a>
+            </li>
+            <li class="pl-5"><a><i title="Statitic" class="fas fa-align-right"></i></a></li>
+          </ul>
+        </li>
       </ul>
-    </li>
-  </ul>
-</div>
+      <div class="ml-auto mr-3"><a id="trash-bin" href="#" class=""><i id="delete${x.id}" class="fas fa-trash-alt"></i></a></div>
+    </div>
+  </div>
   `).join('');
 
   //render letters remaining
@@ -86,6 +104,34 @@ let render = () => {
 
   //like
   like();
+
+  //delete
+  deleteTweet();
+
+  filteredHastag = {};
+
+  //count hashTag
+  for (let i = 0; i <= tweets.length - 1; i++) {
+
+    if (!filteredHastag[tweets[i].hashTag]) {
+      filteredHastag[tweets[i].hashTag] = 1;
+    } else if (filteredHastag[tweets[i].hashTag]) {
+      filteredHastag[tweets[i].hashTag]++;
+    }
+  }
+
+  //render trending tweet
+  trendingTweets.innerHTML = Object.keys(filteredHastag).map(x => `<li id="custom-li-trending"><strong>${x}</strong></li>${x?`<li id="number-of-tweets">${filteredHastag[x]} Tweets</li>`:''}`).join('');
+
+  //get a list of all ids
+  idList = [0];
+
+  for (let i = 0; i < tweets.length - 1; i++) {
+    idList[i] = tweets[i].id;
+  }
+
+
+
 }
 
 
@@ -131,31 +177,36 @@ let getTweet = () => {
   //filter inputValue
   let filteredInputValue = inputValue.split(' ').map(x => {
 
-    //(tag a friend) filter so every word start with @ will be blue
+    //(start with @) (include image URL) (start with #)
     if (x.startsWith('@')) {
       return `<a href="#" class="text-primary">${x}</a> `;
-    }
-
-    //(img url) delete image url
-    else if (x.includes('.jpg') || x.includes('.png')) {
+    } else if (x.includes('.jpg') || x.includes('.png')) {
       return '';
+    } else if (x.startsWith('#')) {
+      return `<a href="#" class="text-primary">${x}</a> `;
     } else {
       return x;
     }
 
   }).join(' ');
 
-  //(img url) filter inputValue to get the img url alone
-  let imgUrl = inputValue.split(' ').filter(x => x.includes('.png') || x.includes('.jpg') ).join('');
+  //(get img url) filter inputValue to get the img url alone
+  let imgUrl = inputValue.split(' ').filter(x => x.includes('.png') || x.includes('.jpg')).join('');
+
+  //(get hastag) get the value of the hashtag
+  let hashTag = inputValue.split(' ').filter(x => x.includes('#')).join('');
+
+  
 
   //add text value to tweets array
   tweets.unshift({
 
     //use the filtered value
     tweetText: filteredInputValue,
-    id: tweets.length,
+    id: (!tweets.length ? 0 : Math.max(...idList) + 1),
     liked: false,
-    imgUrl: imgUrl
+    imgUrl: imgUrl,
+    hashTag: hashTag
   });
 
   //erase input area
@@ -170,6 +221,8 @@ let getTweet = () => {
   render();
 }
 
+
+
 //retweet function
 let retweet = () => {
   for (let i = tweets.length - 1; i >= 0; i--) {
@@ -183,13 +236,19 @@ let retweet = () => {
         tweetText: tweets[i].tweetText,
 
         //give it a new id
-        id: tweets.length,
+        id: (!tweets.length ? 0 : Math.max(...idList) + 1),
 
-        //remove liked
+        //remove like
         liked: false,
 
         //keep img url
-        imgUrl: tweets[i].imgUrl
+        imgUrl: tweets[i].imgUrl,
+
+        //keep hasTag
+        hashTag: tweets[i].hashTag,
+
+        //if the tweet being retweeted is original return id/ is a retweet return the original id
+        retweet: (tweets[i].retweet? tweets[i].retweet : tweets[i].id)
 
       });
       render();
@@ -213,6 +272,21 @@ let like = () => {
     };
 
     document.querySelector(`#like${tweets[i].id}`).addEventListener('click', action);
+  }
+}
+
+//delete tweets funciton
+let deleteTweet = () => {
+  for (let i = tweets.length - 1; i >= 0; i--) {
+
+    let action = () => {
+
+      tweets.splice(i, 1);
+
+      render();
+    };
+
+    document.querySelector(`#delete${tweets[i].id}`).addEventListener('click', action);
   }
 }
 
