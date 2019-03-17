@@ -14,9 +14,6 @@
 </head>
 
 <body>
-
-
-
   
     <!-- Navbar : Ngan -->
     <div class="nav-bar text-center fixed-top  ">
@@ -73,52 +70,95 @@
 
 
 
-    <div class="site-body container text-center">
+    <div class="d-flex flex-wrap justify-content-center">
 
-        <div class="row">
+      <!-- left sidebar : Hasan -->
+      <div class="left-sidebar">
 
-
-            <!-- left sidebar : Hasan -->
-            <div class="left-sidebar col-6 col-md-3">
-                <div class="container">
-                    <div class="profile-card">
-                        <h1>Profile card</h1>
-                    </div>
-
-                    <div class="trending-module">
-                        <h1>Trending module</h1>
-                    </div>
-                </div>
-            </div>
-            <!-- left sidebar : Hasan -->
-
-
-            <!-- main section : Hung -->
-            <div class="main-section col-6 col-md-6">
-                <div class="container">
-                    <h1>Main section</h1>
-                </div>
-            </div>
-            <!-- main section : Hung -->
-
-
-            <!-- right sidebar : Hasan -->
-            <div class="right-sidebar col-6 col-md-3">
-                <div class="container">
-                    <div class="follow-module">
-                        <h1>Follow module</h1>
-                    </div>
-
-                    <div class="footer">
-                        <h1>Footer</h1>
-                    </div>
-                </div>
-            </div>
-            <!-- right sidebar : Hasan -->
-
-
-
+        <div class="profile-card">
+          <h1>Profile card</h1>
         </div>
+
+        <div class="trending-module">
+          <h1>Trending module</h1>
+        </div>
+
+      </div>
+      <!-- left sidebar : Hasan -->
+
+
+      <!-- main section : Hung -->
+      <div class="main-section">
+
+        <div tabindex="0" id="tweet-box" class="justify-content-center py-2">
+          <div class="d-flex flex-wrap">
+            <div id="input-avatar" class="my-auto pl-4 pr-2">
+              <img src="images/avatar.png" alt="" class="rounded-circle">
+            </div>
+            <div id="tweet-input-wrapping" class="align-middle my-auto mr-3 flex-grow-1 d-flex px-2 py-1 rounded">
+              <textarea id="tweet-input" type="text" placeholder="What's happening?" class="flex-grow-1 border-0 align-top"></textarea>
+            </div>
+          </div>
+          <div id="button-row" class="d-none text-right py-2">
+            <span id="letters-remaining" class="mr-2">140 letters remaining</span>
+            <a id="tweet-button-1" class="mr-3">Tweet</a>
+          </div>
+        </div>
+
+        <div id="tweet-section">
+          <!-- <div id=${x.id} class="tweet d-flex justify-content-start align-top">
+            <div><img src="images/bigavatar.png" alt="" class="rounded-circle" width="48px" height="48px"></div>
+            <ul id="tweet-content" class="list-unstyled">
+              <li class="text-left">
+                <ul id="user-infor" class="d-flex list-unstyled">
+                  <li><strong>Rachael Daily </strong></li>
+                  <li class="pl-1 text-secondary">@RachaelDaily</li>
+                  <li class="pl-1 text-secondary">· 34m</li>
+                </ul>
+              </li>
+              <li class="text-left pb-3">
+                <div class="tweet-text">${x.tweetText}</div>
+              </li>
+              <li>
+                <div class="mr-3 mb-3">
+                  <img src="https://pbs.twimg.com/media/D1mGo5dXgAAftms.jpg" alt="" class="img-fluid img-rounded">
+                </div>
+              </li>
+              <li class="text-left">
+                <ul id="action-row" class="d-flex list-unstyled">
+                  <li><a><i title="Comment" class="far fa-comment"></i></a></li>
+                  <li class="pl-5"><a><i id="retweet${x.id}" title="Retweet" class="fas fa-retweet"></i></a></li>
+                  <li class="pl-5">
+                    <a>
+                      <i id="like${x.id}" title="Like" class="${x.liked?'fas fa-heart text-danger':'far fa-heart'}">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="pl-5"><a><i title="Statitic" class="fas fa-align-right"></i></a></li>
+                </ul>
+              </li>
+            </ul>
+          </div> -->
+        </div>
+
+      </div>
+      <!-- main section : Hung -->
+
+
+      <!-- right sidebar : Hasan -->
+      <div class="right-sidebar">
+
+        <div class="follow-module">
+          <h1>Follow module</h1>
+        </div>
+
+        <div class="footer">
+          <h1>Footer</h1>
+        </div>
+
+      </div>
+      <!-- right sidebar : Hasan -->
+        
 
     </div>
     <script src="main.js"></script>

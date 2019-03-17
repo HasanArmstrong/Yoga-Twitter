@@ -1,5 +1,7 @@
 /* main-color: #803953
 
+   pinkish color: #F3E2E8
+
    background-color: #EEEEEE
 
    white-color: #FFFFFF
@@ -13,9 +15,9 @@
 }
 
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    margin-top: 70px;
-    /* margin-bottom: 270px; */
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #E6ECF0;
+  margin-top: 70px;
 }
 
 
@@ -182,7 +184,8 @@ ul li i {
 /* ↓↓↓↓↓↓↓↓↓↓ LEFT-SIDEBAR ↓↓↓↓↓↓↓↓↓↓ */
 
 .left-sidebar {
-    height: 500px;
+  height: 500px;
+  width: 220px;
 }
 
 .profile-card {
@@ -222,8 +225,89 @@ ul li i {
 /* ↓↓↓↓↓↓↓↓↓↓ MAIN-SECTION ↓↓↓↓↓↓↓↓↓↓ */
 
 .main-section {
-    height: 1000px;
+  width: 500px;
+  font-size: 14px;
 }
 
+#tweet-box {
+  background-color: #F3E2E8;
+}
 
+#tweet-input-wrapping {
+  background-color: #FFFFFF;
+  border: 1px #803953 solid;
+  line-break: after;
+  margin-left: 5px;
+}
+
+#tweet-input::placeholder {
+  color: #803953;
+}
+
+#tweet-input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  height: 26px;
+  overflow-wrap: break-word;
+  resize: none;
+}
+
+#tweet-button-1 {
+  background-color: #9e4767;
+  border: 1px solid #803953;
+  color: #fff;
+  border-radius: 100px;
+  box-shadow: none;
+  cursor: not-allowed;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: auto;
+}
+
+#tweet-button-1:hover {
+  background-color: #803953;
+}
+
+#tweet-content {
+  padding-left: 15px;
+}
+
+/* .row-list {
+  list-style-type: none;
+  padding-left: 0px;
+} */
+
+#action-row>li>a>i {
+  color: inherit;
+  cursor: pointer;
+}
+
+.tweet {
+  margin: 2px 0;
+  padding: 15px 0 0 15px;
+  background-color: #fff;
+}
+
+.tweet:hover {
+  background-color: #F5F8FA;
+}
+
+.tweet-text {
+  overflow-wrap: break-word;
+}
+
+.img-rounded {
+  border-radius: 15px;
+  border: 1px solid lightgray;
+}
+
+.img-rounded:hover {
+  border: 1px solid gray;  
+}
 /* ↑↑↑↑↑↑↑↑↑↑ MAIN-SECTION ↑↑↑↑↑↑↑↑↑↑ */
