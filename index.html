@@ -2,166 +2,210 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Yoga Tweeter</title>
-    <meta name="viewport" content="width=device-width,shrink-to-fit">
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-    <!-- stylesheet css -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Yoga Tweeter</title>
+  <meta name="viewport" content="width=device-width,shrink-to-fit">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+  <!-- stylesheet css -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css">
 </head>
 
 <body>
-  
-    <!-- Navbar : Ngan -->
-    <div class="nav-bar text-center fixed-top  ">
-        <nav class=" navbar-light bg-light text-secondary">
-            <div class="container container-fluid">
 
-                <div class="navbar-collapse d-flex flex-row" id="navbarSupportedContent">
-                    <div class="ml-sm-3">
-                        <ul class="navbar-nav mr-auto d-flex d-inline flex-row">
-                            <li class="nav-item  active content ">
-                                <span class="nav-link mr-sm-4" href="#"><i id="left-icon" class="fas fa-home "></i><a id="content-left">  Home</a></span>
-                            </li>
-                            <li class="nav-item content">
-                                <span class="nav-link mr-sm-4" href="#"><i id="left-icon" class="fas fa-bell "></i><a id="content-left">  Notifications</a></span>
-                            </li>
-                            <li class="nav-item content">
-                                <span class="nav-link " href="#"><i id="left-icon" class="far fa-envelope"></i><a id="content-left" > Messages</a></span>
-                            </li>
+  <!-- Navbar : Ngan -->
+  <div class="nav-bar text-center fixed-top  ">
+    <nav class=" navbar-light bg-light text-secondary">
+      <div class="container container-fluid">
 
-                        </ul>
-                    </div>
-                    <!-- <div class="align-middle mx-auto d-flex flex-row justify-content-center  "> -->
-                    <a id="brand-logo" class="navbar-brand ml-sm-5 " href="#">
-                        <img src="images/namaste-text-edit.png" alt="yoga-logo">
-                    </a>
+        <div class="navbar-collapse d-flex flex-row" id="navbarSupportedContent">
+          <div class="ml-sm-3">
+            <ul class="navbar-nav mr-auto d-flex d-inline flex-row">
+              <li class="nav-item  active content ">
+                <span class="nav-link mr-sm-4" href="#"><i id="left-icon" class="fas fa-home "></i><a id="content-left">
+                    Home</a></span>
+              </li>
+              <li class="nav-item content">
+                <span class="nav-link mr-sm-4" href="#"><i id="left-icon" class="fas fa-bell "></i><a id="content-left">
+                    Notifications</a></span>
+              </li>
+              <li class="nav-item content">
+                <span class="nav-link " href="#"><i id="left-icon" class="far fa-envelope"></i><a id="content-left">
+                    Messages</a></span>
+              </li>
 
-                    <!-- </div> -->
-                    <div class="ml-auto">
-                        <ul class="navbar-nav d-flex flex-row justify-content-center">
-                            <div>
-                                <form class="search form-inline ">
-                                    <input id="search-frame" class="form-control context mr-sm-4" type="text" placeholder="  Search Yoga..." aria-label="Search">
-                                    <span id="fa-search-icon" class="fa fa-search "></span>
-                                </form>
-                            </div>
-                            <li class="nav-item active">
-                                <span id="signin-btn" class="nav-link mr-sm-2" href="#">Sign In</span>
-                            </li>
-                            <li class="nav-item">
-                                <span id="tweet-button" class="nav-link mr-sm-4" href="#">Tweet</span>
-                            </li>
+            </ul>
+          </div>
+          <!-- <div class="align-middle mx-auto d-flex flex-row justify-content-center  "> -->
+          <a id="brand-logo" class="navbar-brand ml-sm-5 " href="#">
+            <img src="images/namaste-text-edit.png" alt="yoga-logo">
+          </a>
 
-                            <!-- <li class="nav-item">
+          <!-- </div> -->
+          <div class="ml-auto">
+            <ul class="navbar-nav d-flex flex-row justify-content-center">
+              <div>
+                <form class="search form-inline ">
+                  <input id="search-frame" class="form-control context mr-sm-4" type="text" placeholder="  Search Yoga..."
+                    aria-label="Search">
+                  <span id="fa-search-icon" class="fa fa-search "></span>
+                </form>
+              </div>
+              <li class="nav-item active">
+                <span id="signin-btn" class="nav-link mr-sm-2" href="#">Sign In</span>
+              </li>
+              <li class="nav-item">
+                <span id="tweet-button" class="nav-link mr-sm-4" href="#">Tweet</span>
+              </li>
+
+              <!-- <li class="nav-item">
             <a class="nav-link disabled" href="#">Messages</a>
         </li> -->
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </nav>
-    </div>
-    <!-- Navbar : Ngan -->
-
-
-
-    <div class="d-flex flex-wrap justify-content-center">
-
-      <!-- left sidebar : Hasan -->
-      <div class="left-sidebar">
-
-        <div class="profile-card">
-          <h1>Profile card</h1>
-        </div>
-
-        <div class="trending-module">
-          <h1>Trending module</h1>
-        </div>
-
-      </div>
-      <!-- left sidebar : Hasan -->
-
-
-      <!-- main section : Hung -->
-      <div class="main-section">
-
-        <div tabindex="0" id="tweet-box" class="justify-content-center py-2">
-          <div class="d-flex flex-wrap">
-            <div id="input-avatar" class="my-auto pl-4 pr-2">
-              <img src="images/avatar.png" alt="" class="rounded-circle">
-            </div>
-            <div id="tweet-input-wrapping" class="align-middle my-auto mr-3 flex-grow-1 d-flex px-2 py-1 rounded">
-              <textarea id="tweet-input" type="text" placeholder="What's happening?" class="flex-grow-1 border-0 align-top"></textarea>
-            </div>
-          </div>
-          <div id="button-row" class="d-none text-right py-2">
-            <span id="letters-remaining" class="mr-2">140 letters remaining</span>
-            <a id="tweet-button-1" class="mr-3">Tweet</a>
-          </div>
-        </div>
-
-        <div id="tweet-section">
-          <!-- <div id=${x.id} class="tweet d-flex justify-content-start align-top">
-            <div><img src="images/bigavatar.png" alt="" class="rounded-circle" width="48px" height="48px"></div>
-            <ul id="tweet-content" class="list-unstyled">
-              <li class="text-left">
-                <ul id="user-infor" class="d-flex list-unstyled">
-                  <li><strong>Rachael Daily </strong></li>
-                  <li class="pl-1 text-secondary">@RachaelDaily</li>
-                  <li class="pl-1 text-secondary">· 34m</li>
-                </ul>
-              </li>
-              <li class="text-left pb-3">
-                <div class="tweet-text">${x.tweetText}</div>
-              </li>
-              <li>
-                <div class="mr-3 mb-3">
-                  <img src="https://pbs.twimg.com/media/D1mGo5dXgAAftms.jpg" alt="" class="img-fluid img-rounded">
-                </div>
-              </li>
-              <li class="text-left">
-                <ul id="action-row" class="d-flex list-unstyled">
-                  <li><a><i title="Comment" class="far fa-comment"></i></a></li>
-                  <li class="pl-5"><a><i id="retweet${x.id}" title="Retweet" class="fas fa-retweet"></i></a></li>
-                  <li class="pl-5">
-                    <a>
-                      <i id="like${x.id}" title="Like" class="${x.liked?'fas fa-heart text-danger':'far fa-heart'}">
-                      </i>
-                    </a>
-                  </li>
-                  <li class="pl-5"><a><i title="Statitic" class="fas fa-align-right"></i></a></li>
-                </ul>
-              </li>
             </ul>
-          </div> -->
+          </div>
+
         </div>
+      </div>
+    </nav>
+  </div>
+  <!-- Navbar : Ngan -->
+
+
+  <div class="site-body container text-center">
+
+      <div class="d-flex flex-wrap justify-content-center">
+
+    <!-- left sidebar : Hasan -->
+    <div class="left-sidebar col-12 col-sm-6 col-md-5 col-lg-3 col-xl-3">
+        <div class="bg-white profile-card mb-2">
+          <div id="custom-bg">
+          </div>
+          <img id="profile-pic" src="images/yoga-01.png">
+          <div id="profile-info">
+            <div id="profile-name">
+              Rachael Daily
+              <p id="twitter-contact">@RachaelDaily</p>
+            </div>
+            <div id="twitter-stats">
+              <ul id="custom-ul">
+                <li id="custom-li">
+                  <span id="twitter-stats-category">Tweets</span>
+                  <span id="twitter-stats-numbers">193</span>
+                </li>
+                <li id="custom-li">
+                  <span id="twitter-stats-category">Following</span>
+                  <span id="twitter-stats-numbers">68</span>
+                </li>
+                <li id="custom-li">
+                  <span id="twitter-stats-category">Followers</span>
+                  <span id="twitter-stats-numbers">12</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white trending-module px-4 py-4">
+          <div id="trending-content">
+            <div class="trending-titles">
+              <span id="trend-title">Trends for you</span><a href="#" id="trends-link">-Change</a>
+            </div>
+            <ul id="custom-ul-trending">
+
+            </ul>
+          </div>
+        </div>
+    </div>
+    <!-- left sidebar : Hasan -->
+
+
+    <!-- main section : Hung -->
+    <div class="main-section mx-2 col">
+
+      <div tabindex="0" id="tweet-box" class="justify-content-center py-2">
+        <div class="d-flex flex-wrap">
+          <div id="input-avatar" class="my-auto pl-4 pr-2">
+            <img src="images/avatar.png" alt="" class="rounded-circle">
+          </div>
+          <div id="tweet-input-wrapping" class="align-middle my-auto mr-3 flex-grow-1 d-flex px-2 py-1">
+            <textarea id="tweet-input" type="text" placeholder="What's happening?" class="flex-grow-1 border-0 align-top"></textarea>
+          </div>
+        </div>
+        <div id="button-row" class="d-none text-right py-2">
+          <span id="letters-remaining" class="mr-2">140 letters remaining</span>
+          <a id="tweet-button-1" class="mr-3">Tweet</a>
+        </div>
+      </div>
+
+      <div id="tweet-section">
 
       </div>
-      <!-- main section : Hung -->
-
-
-      <!-- right sidebar : Hasan -->
-      <div class="right-sidebar">
-
-        <div class="follow-module">
-          <h1>Follow module</h1>
-        </div>
-
-        <div class="footer">
-          <h1>Footer</h1>
-        </div>
-
-      </div>
-      <!-- right sidebar : Hasan -->
-        
 
     </div>
-    <script src="main.js"></script>
+    <!-- main section : Hung -->
+
+
+    <!-- right sidebar : Hasan -->
+    <div class="right-sidebar">
+
+      <div class="bg-white follow-module">
+        <div id="follow-heading">
+          <h3 id="follow-title">Who to follow</h3>
+          <a id="follow-links" href="#">Refresh</a>
+          <a id="follow-links-1" href="#">View All</a>
+        </div>
+
+        <div id="follow-content">
+          <img id="profile-pic-follow" src="images/yoga-02.png">
+          <div id="follow-button-text">
+            <p id="follow-text">Bikhram<span id="twitter-handle">@Bikhram</span></p>
+            <button class="btn-primary" id="custom-button">Follow</button>
+          </div>
+
+        </div>
+        <div id="follow-content">
+          <img id="profile-pic-follow" src="images/yoga-05.png">
+          <div id="follow-button-text">
+            <p id="follow-text">Peace Yoga<span id="twitter-handle">@PeaceYoga</span></p>
+            <button class="btn-primary" id="custom-button">Follow</button>
+          </div>
+
+        </div>
+        <div id="follow-content">
+          <img id="profile-pic-follow" src="images/yoga-06.png">
+          <div id="follow-button-text">
+            <p id="follow-text">TeaLeaf Yoga<span id="twitter-handle">@TeaLeafYoga</span></p>
+            <button class="btn-primary" id="custom-button">Follow</button>
+          </div>
+
+        </div>
+
+        <div id="follow-content-1">
+          <img id="profile-pic-follow" src="images/yoga-01.png">
+          <div id="follow-button-text">
+            <p id="follow-text">Yoga Works<span id="twitter-handle">@YogaWorks</span></p>
+            <button class="btn-primary" id="custom-button">Follow</button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="bg-white footer px-2 py-2" id="custom-footer">
+        © 2019 Twitter About Help Center Terms Privacy policy Cookies Ads info
+      </div>
+
+    </div>
+    <!-- right sidebar : Hasan -->
+
+</div>
+  </div>
+
+  <script src="main.js"></script>
 </body>
 
 </html>
+
