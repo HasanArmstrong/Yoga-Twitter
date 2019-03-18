@@ -248,7 +248,7 @@ let retweet = () => {
         hashTag: tweets[i].hashTag,
 
         //if the tweet being retweeted is original return id/ is a retweet return the original id
-        retweet: (tweets[i].retweet? tweets[i].retweet : tweets[i].id)
+        retweet: (tweets[i].retweet >= 0 ? tweets[i].retweet : tweets[i].id)
 
       });
       render();
@@ -281,7 +281,12 @@ let deleteTweet = () => {
 
     let action = () => {
 
-      tweets.splice(i, 1);
+      tweets = tweets.filter(x => {
+        if (x.id == tweets[i].id || x.retweet == tweets[i].id) {
+          return false;
+        }
+        return true;
+      });
 
       render();
     };

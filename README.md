@@ -11,12 +11,12 @@ View the site https://silly-archimedes-b3f013.netlify.com/
 Here's a walkthrough of implemented user stories.
 
 
-<img src='http://g.recordit.co/ni1kU68JVf.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/x3iJpngbh9.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 ## User Stories
 
-The following **required** functionalities are completed (this is a sample):
+The following **required** functionalities are completed:
 
 * [x] The user should be able to enter a message into a text field.
 * [x] The user should be able to press "Tweet" and see the message pop in below the text box.
@@ -31,10 +31,10 @@ The following **required** functionalities are completed (this is a sample):
 
 
 Optional Stories
-* [] Download and upload the list of tweets using the myjson api, as shown in class.
+* [ ] Download and upload the list of tweets using the myjson api, as shown in class.
 * [x] Users can mention other users. Any string that starts with @username will be highlighted in blue.
-* [] The user can click on a hashtag, and only other tweets with that hashtag are shown.
-* [] When the user deletes a tweet, all retweets should be deleted.
+* [ ] The user can click on a hashtag, and only other tweets with that hashtag are shown.
+* [ ] When the user deletes a tweet, all retweets should be deleted.
 * [x] Any tweet with an image URL will have the image automatically expanded in the tweet.
 
 
